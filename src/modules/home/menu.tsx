@@ -1,5 +1,6 @@
 export interface MenuProps {
     menu: Menu[];
+    key: any;
 }
 
 export interface Menu {
@@ -7,12 +8,12 @@ export interface Menu {
     route: string;
 }
 
-export default function Menu({menu}: MenuProps) {
+export default function Menu({menu, key}: MenuProps) {
     return (
         <div className="menu">
             {menu.map(item => {
                 return (
-                    <div>{item.label}</div>
+                    <div key={key}>{item.label}</div>
                 )
             })}
         </div>
